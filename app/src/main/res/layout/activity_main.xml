@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0A0A0F"
+    android:padding="24dp">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="32dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔒 MÀNG HÌNH KHÓA THỨ 2"
+            android:textColor="#00FFB0"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.08"
+            android:fontFamily="monospace"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mật khẩu = giờ + phút hiện tại"
+            android:textColor="#66FFFFFF"
+            android:textSize="13sp"
+            android:layout_marginTop="6dp"
+            android:fontFamily="monospace"/>
+    </LinearLayout>
+
+    <!-- Card mật khẩu live -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/card_bg"
+        android:padding="24dp"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MẬT KHẨU NGAY BÂY GIỜ"
+            android:textColor="#4488FF"
+            android:textSize="10sp"
+            android:letterSpacing="0.15"
+            android:fontFamily="monospace"/>
+
+        <TextView
+            android:id="@+id/tvCurrentPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="----"
+            android:textColor="#00AAFF"
+            android:textSize="52sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.3"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GIỜ + PHÚT • Cập nhật mỗi giây"
+            android:textColor="#33FFFFFF"
+            android:textSize="10sp"
+            android:fontFamily="monospace"
+            android:layout_marginTop="4dp"/>
+    </LinearLayout>
+
+    <!-- Bật/Tắt -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/card_bg"
+        android:padding="20dp"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bật màn hình khóa"
+                android:textColor="#EEEEEE"
+                android:textSize="15sp"
+                android:fontFamily="monospace"/>
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔴 Chưa bật"
+                android:textColor="#66FFFFFF"
+                android:textSize="12sp"
+                android:fontFamily="monospace"
+                android:layout_marginTop="2dp"/>
+        </LinearLayout>
+
+        <Switch
+            android:id="@+id/switchLock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:thumbTint="#00FFB0"
+            android:trackTint="#1A3322"/>
+    </LinearLayout>
+
+    <!-- Nút test -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/card_bg"
+        android:padding="20dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thử màn hình khóa"
+            android:textColor="#EEEEEE"
+            android:textSize="15sp"
+            android:fontFamily="monospace"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xem trước giao diện"
+            android:textColor="#66FFFFFF"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:layout_marginTop="2dp"/>
+
+        <android.widget.Button
+            android:id="@+id/btnTest"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="▶  MỞ THỬ NGAY"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:backgroundTint="#00FFB0"
+            android:layout_marginTop="12dp"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.1"/>
+    </LinearLayout>
+
+    <!-- Hướng dẫn -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/card_bg"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CÁCH DÙNG"
+            android:textColor="#4488FF"
+            android:textSize="10sp"
+            android:letterSpacing="0.15"
+            android:fontFamily="monospace"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Bật công tắc ở trên\n2. Cấp quyền nếu được yêu cầu\n3. Tắt màn hình → Bật lên → Vuốt lên\n4. Nhập mật khẩu = giờ:phút\n   Ví dụ 22:05 → gõ 2205"
+            android:textColor="#AAAAAA"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:lineSpacingMultiplier="1.5"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+</LinearLayout>

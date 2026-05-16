@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0A0F"
+    android:clickable="true"
+    android:focusable="true">
+
+    <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/bg_glow"/>
+
+    <!-- LOCK PANEL: đồng hồ + hint vuốt -->
+    <LinearLayout
+        android:id="@+id/layoutLock"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:layout_marginTop="60dp">
+            <TextView android:id="@+id/tvDate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="THỨ BA, 13 THÁNG 5" android:textColor="#66FFFFFF" android:textSize="13sp" android:letterSpacing="0.1" android:fontFamily="monospace" android:layout_marginBottom="8dp"/>
+            <TextView android:id="@+id/tvTime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="22:00" android:textColor="#00FFB0" android:textSize="80sp" android:textStyle="bold" android:fontFamily="monospace"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="MÀN HÌNH KHÓA THỨ 2" android:textColor="#33FFFFFF" android:textSize="11sp" android:letterSpacing="0.2" android:fontFamily="monospace" android:layout_marginTop="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/swipeArrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal" android:layout_marginBottom="60dp" android:padding="16dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="∧" android:textColor="#00FFB0" android:textSize="32sp" android:alpha="0.7"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="VUỐT LÊN ĐỂ MỞ KHÓA" android:textColor="#44FFFFFF" android:textSize="10sp" android:letterSpacing="0.15" android:fontFamily="monospace" android:layout_marginTop="4dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- PIN PANEL -->
+    <LinearLayout
+        android:id="@+id/layoutPin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@drawable/pin_panel_bg"
+        android:paddingTop="28dp" android:paddingLeft="32dp" android:paddingRight="32dp" android:paddingBottom="48dp"
+        android:visibility="gone">
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal" android:background="@drawable/hint_bg" android:paddingTop="14dp" android:paddingBottom="14dp" android:paddingLeft="32dp" android:paddingRight="32dp" android:layout_marginBottom="28dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="MẬT KHẨU HIỆN TẠI" android:textColor="#4488FF" android:textSize="9sp" android:letterSpacing="0.2" android:fontFamily="monospace"/>
+            <TextView android:id="@+id/tvPassHint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2200" android:textColor="#0099FF" android:textSize="40sp" android:textStyle="bold" android:fontFamily="monospace" android:letterSpacing="0.3" android:layout_marginTop="2dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="GIỜ + PHÚT  •  TỰ CẬP NHẬT" android:textColor="#22FFFFFF" android:textSize="9sp" android:fontFamily="monospace"/>
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/pinRow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center" android:layout_marginBottom="8dp">
+            <View android:id="@+id/dot0" android:layout_width="20dp" android:layout_height="20dp" android:layout_margin="10dp" android:background="@drawable/dot_empty"/>
+            <View android:id="@+id/dot1" android:layout_width="20dp" android:layout_height="20dp" android:layout_margin="10dp" android:background="@drawable/dot_empty"/>
+            <View android:id="@+id/dot2" android:layout_width="20dp" android:layout_height="20dp" android:layout_margin="10dp" android:background="@drawable/dot_empty"/>
+            <View android:id="@+id/dot3" android:layout_width="20dp" android:layout_height="20dp" android:layout_margin="10dp" android:background="@drawable/dot_empty"/>
+        </LinearLayout>
+
+        <TextView android:id="@+id/tvMessage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:textSize="12sp" android:fontFamily="monospace" android:layout_marginBottom="8dp" android:visibility="gone"/>
+
+        <GridLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:columnCount="3" android:layout_marginTop="8dp">
+            <TextView android:id="@+id/btn1" android:layout_width="84dp" android:layout_height="84dp" android:layout_margin="7dp" android:gravity="center" android:text="1" android:textColor="#EEFFFFFF" android:textSize="28sp" android:textStyle="bold" android:fontFamily="monospace" android:background="@drawable/num_btn_bg" android:onClick="onKeyPress" android:clickable="true" android:focusable="true" android:tag="1"/>
+            <TextView android:id="@+id/btn2" android:layout_width="84dp" android:layout_height="84dp" android:layout_margin="7dp" android:gravity="center" android:text="2" android:textColor="#EEFFFFFF" android:textSize="28sp" android:textStyle="bold" android:fontFamily="monospace" android:background="@drawable/num_btn_bg" android:onClick="onKeyPress" android:clickable="true" android:focusable="true" android:tag="2"/>
+            <TextView android:id="@+id/btn3" android:layout_width="84dp" android:layout_height="84dp" android:layout_margin="7dp" android:gravity="center" android:text="3" android:textColor="#EEFFFFFF" android:textSize="28sp" android:textStyle="bold" android:fontFamily="monospace" android:background="@drawable/num_btn_bg" android:onClick="onKeyPress" android:clickable="true" android:focusable="true" android:tag="3"/>
+            <TextView android:id="@+id/btn4" android:layout_width="84dp" android:layout_height="84dp" android:layout_margin="7dp" android:gravity="center" android:text="4" android:textColor="#EEFFFFFF" android:textSize="28sp" android:textStyle="bold" android:fontFamily="monospace" android:background="@drawable/num_btn_bg" android:onClick="onKeyPress" android:clickable="true" android:focusable="true" android:tag="4"/>
+            <TextView android:id="@+id/btn5" android:layout_width="84dp" android:layout_height="84dp" android:layout_margin="7dp" android:gravity="center" android:text="5" android:textColor="#EEFFFFFF" android:textSize="28sp" android:textStyle="bold" android:fontFamily="monospace" android:background="@drawable/num_btn_bg" android:onClick="onKeyPress" android:clickable="true" android:focusable="true" android:tag="5"/>
+            <TextView android:id="@+id/btn6" android:layout_width="84dp" android:layout_height="84dp" android:layout_margin="7dp" android:gravity="center" android:text="6" android:textColor="#EEFFFFFF" android:textSize="28sp" android:textStyle="bold" android:fontFamily="monospace" android:background="@drawable/num_btn_bg" android:onClick="onKeyPress" android:clickable="true" android:focusable="true" android:tag="6"/>
+            <TextView android:id="@+id/btn7" android:layout_width="84dp" android:layout_height="84dp" android:layout_margin="7dp" android:gravity="center" android:text="7" android:textColor="#EEFFFFFF" android:textSize="28sp" android:textStyle="bold" android:fontFamily="monospace" android:background="@drawable/num_btn_bg" android:onClick="onKeyPress" android:clickable="true" android:focusable="true" android:tag="7"/>
+            <TextView android:id="@+id/btn8" android:layout_width="84dp" android:layout_height="84dp" android:layout_margin="7dp" android:gravity="center" android:text="8" android:textColor="#EEFFFFFF" android:textSize="28sp" android:textStyle="bold" android:fontFamily="monospace" android:background="@drawable/num_btn_bg" android:onClick="onKeyPress" android:clickable="true" android:focusable="true" android:tag="8"/>
+            <TextView android:id="@+id/btn9" android:layout_width="84dp" android:layout_height="84dp" android:layout_margin="7dp" android:gravity="center" android:text="9" android:textColor="#EEFFFFFF" android:textSize="28sp" android:textStyle="bold" android:fontFamily="monospace" android:background="@drawable/num_btn_bg" android:onClick="onKeyPress" android:clickable="true" android:focusable="true" android:tag="9"/>
+            <Space android:layout_width="84dp" android:layout_height="84dp" android:layout_margin="7dp"/>
+            <TextView android:id="@+id/btn0" android:layout_width="84dp" android:layout_height="84dp" android:layout_margin="7dp" android:gravity="center" android:text="0" android:textColor="#EEFFFFFF" android:textSize="28sp" android:textStyle="bold" android:fontFamily="monospace" android:background="@drawable/num_btn_bg" android:onClick="onKeyPress" android:clickable="true" android:focusable="true" android:tag="0"/>
+            <ImageView android:id="@+id/btnDel" android:layout_width="84dp" android:layout_height="84dp" android:layout_margin="7dp" android:src="@android:drawable/ic_input_delete" android:tint="#00FFB0" android:padding="26dp" android:background="@drawable/num_btn_bg" android:scaleType="fitCenter" android:onClick="onDelete" android:clickable="true" android:focusable="true"/>
+        </GridLayout>
+
+    </LinearLayout>
+</FrameLayout>
