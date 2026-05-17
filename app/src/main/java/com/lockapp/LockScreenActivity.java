@@ -177,7 +177,7 @@ public class LockScreenActivity extends AppCompatActivity {
         if (clockTimer != null) clockTimer.cancel();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             KeyguardManager km = (KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE);
-            if (km != null) requestDismissKeyguard(this, null);
+            if (km != null) km.requestDismissKeyguard(this, null);
         }
         finish();
     }
